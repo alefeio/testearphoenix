@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MdAdd } from 'react-icons/md';
 import api from '~/services/api';
 
-import { Container, Barra, ListaProdutos, Banner } from './styles';
+import { Container, Barra, ListaProdutos, Banner, Titulo } from './styles';
 
 import { detelePerfilRequest } from '~/store/modules/usuario/actions';
 
@@ -44,6 +44,7 @@ export default function Usuarios() {
           </li>
         </ul>
       </Barra>
+      <Titulo>Lista de usuários</Titulo>
       <ListaProdutos>
         {usuarios.map((u, i) => (
           <li key={u.id}>
@@ -74,7 +75,7 @@ export default function Usuarios() {
                 <strong>Gerente</strong>
               </span>
             )}
-            <button onClick={() => editUsuario(i)}>Editar</button>
+            <Link to={`editar/${i}`}>Editar</Link>
             <button onClick={() => excUsuario(i)}>Excluir</button>
           </li>
         ))}

@@ -88,37 +88,27 @@ export const ListaProdutos = styled.ul`
       margin-top: 5px;
     }
 
-    a:first-child {
-      align-self: center;
-    }
-
     a {
-      background: #644d25;
+      margin: 5px 0 0;
+      padding: 1.3rem;
+      text-align: center;
+      background: #135c58;
+      font-weight: bold;
       color: #fff;
       border: 0;
       border-radius: 4px;
-      overflow: hidden;
-      margin-top: auto;
-      display: flex;
-      align-items: center;
+      font-size: 16px;
       transition: background 0.2s;
 
-      div {
-        display: flex;
-        align-items: center;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.1);
-      }
-
-      span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
-      }
-
       &:hover {
-        background: ${darken(0.07, '#644d25')};
+        background: ${darken(0.07, '#135c58')};
       }
     }
   }
+`;
+
+export const Titulo = styled.h1`
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
 `;

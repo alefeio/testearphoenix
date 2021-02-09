@@ -13,10 +13,12 @@ const options = [
   { id: 3, title: 'Gerente' },
 ];
 
-export default function InserirUsuario() {
+export default function InserirUsuario(props) {
   const dispatch = useDispatch();
 
-  const perfil = useSelector((state) => state.usuario.perfil);
+  const id = parseInt(props.match.params.id);
+
+  const perfil = useSelector((state) => state.usuario.perfil[id]);
 
   function handleSubmit(data) {
     dispatch(updatePerfilRequest(data));
@@ -31,7 +33,7 @@ export default function InserirUsuario() {
           </li>
         </ul>
       </Barra>
-      <Titulo>Inserir usuário</Titulo>
+      <Titulo>Editar usuário: {id}</Titulo>
       <Prod>
         <Form initialData={perfil} onSubmit={handleSubmit}>
           <Input name="nome" placeholder="Nome" />
@@ -47,7 +49,7 @@ export default function InserirUsuario() {
 
           <Select name="tipo" options={options} />
 
-          <button type="submit">Inserir usuário</button>
+          <button type="submit">Editar usuário</button>
         </Form>
       </Prod>
     </Container>
