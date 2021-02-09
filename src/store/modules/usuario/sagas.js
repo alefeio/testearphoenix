@@ -43,15 +43,17 @@ export function* updatePerfil({ payload }) {
   }
 }
 
-export function* deletePerfil(payload) {
+export function* deletePerfil({ payload }) {
   try {
-    const data = payload;
+    const data = payload.data;
 
-    alert(payload);
+    const usuDel = Object.assign({
+      data,
+    });
 
-    toast.success(`Usuário ${payload.data} deletado com sucesso!`);
+    toast.success(`Usuário deletado com sucesso!`);
 
-    // yield put(detelePerfilSucesso(data));
+    yield put(detelePerfilSucesso(usuDel));
   } catch (error) {
     toast.error('Erro ao deletar o usuário. Tente novamente!');
     yield put(updatePerfilFalha());

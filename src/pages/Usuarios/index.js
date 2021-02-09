@@ -33,7 +33,7 @@ export default function Usuarios() {
 
   useEffect(() => {
     loadUsuarios();
-  }, [usuarios]);
+  }, [perf]);
 
   return (
     <Container>

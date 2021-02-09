@@ -25,9 +25,9 @@ export function detelePerfilRequest(data) {
   };
 }
 
-export function detelePerfilSucesso(pos) {
+export function detelePerfilSucesso(data) {
   return {
     type: '@usuario/DELETE_PERFIL_SUCESSO',
-    payload: pos,
+    payload: data,
   };
 }
