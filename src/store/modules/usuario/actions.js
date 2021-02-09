@@ -18,10 +18,10 @@ export function updatePerfilFalha() {
   };
 }
 
-export function detelePerfilRequest(data) {
+export function detelePerfilRequest(posicao) {
   return {
     type: '@usuario/DELETE_PERFIL_REQUEST',
-    payload: { data },
+    payload: posicao,
   };
 }
 

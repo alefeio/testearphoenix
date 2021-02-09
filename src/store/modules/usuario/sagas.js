@@ -43,15 +43,15 @@ export function* updatePerfil({ payload }) {
   }
 }
 
-export function* deletePerfil({ payload }) {
+export function* deletePerfil(payload) {
   try {
-    const { pos } = payload.data;
+    const { posicao } = payload;
 
     const usuDel = Object.assign({
-      pos,
+      posicao,
     });
 
-    toast.success('Usuário deletado com sucesso!');
+    toast.success(`Usuário ${usuDel} deletado com sucesso!`);
 
     yield put(detelePerfilSucesso(usuDel));
   } catch (error) {

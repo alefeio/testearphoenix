@@ -45,15 +45,35 @@ export default function Usuarios() {
       <ListaProdutos>
         {usuarios.map((u, i) => (
           <li key={u.id}>
-            <strong>{u.id}</strong>
-            <strong>{u.nome}</strong>
-            <strong>{u.email}</strong>
-            <strong>{u.nascimento}</strong>
-            {u.tipo == 1 && <strong>Administrador</strong>}
-            {u.tipo == 2 && <strong>Colaborador</strong>}
-            {u.tipo == 3 && <strong>Gerente</strong>}
-            <button onClick={() => excUsuario(i)}>Editar</button>
-            <button onClick={() => editUsuario(i)}>Excluir</button>
+            <span>
+              <strong>Id:</strong> {u.id}
+            </span>
+            <span>
+              <strong>Nome:</strong> {u.nome}
+            </span>
+            <span>
+              <strong>Email:</strong> {u.email}
+            </span>
+            <span>
+              <strong>Nascimento:</strong> {u.nascimento}
+            </span>
+            {u.tipo == 1 && (
+              <span>
+                <strong>Administrador</strong>
+              </span>
+            )}
+            {u.tipo == 2 && (
+              <span>
+                <strong>Colaborador</strong>
+              </span>
+            )}
+            {u.tipo == 3 && (
+              <span>
+                <strong>Gerente</strong>
+              </span>
+            )}
+            <button onClick={() => editUsuario(i)}>Editar</button>
+            <button onClick={() => excUsuario(i)}>Excluir</button>
           </li>
         ))}
       </ListaProdutos>
