@@ -23,6 +23,8 @@ export default function Usuarios() {
 
   function excUsuario(data) {
     dispatch(detelePerfilRequest(data));
+
+    // alert(data);
   }
 
   function editUsuario(data) {

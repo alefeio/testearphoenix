@@ -37,7 +37,7 @@ export default function usuario(state = INITIAL_STATE, action) {
         break;
       }
       case '@usuario/DELETE_PERFIL_SUCESSO': {
-        draft.perfil.splice(action.payload.posicao, 1);
+        draft.perfil.splice(action.payload.data, 1);
         break;
       }
       default:
