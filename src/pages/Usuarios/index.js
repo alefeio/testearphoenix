@@ -25,6 +25,10 @@ export default function Usuarios() {
     dispatch(detelePerfilRequest(data));
   }
 
+  function editUsuario(data) {
+    dispatch(detelePerfilRequest(data));
+  }
+
   useEffect(() => {
     loadUsuarios();
   }, [usuarios]);
@@ -48,8 +52,8 @@ export default function Usuarios() {
             {u.tipo == 1 && <strong>Administrador</strong>}
             {u.tipo == 2 && <strong>Colaborador</strong>}
             {u.tipo == 3 && <strong>Gerente</strong>}
-            <Link to={`usuarios/${i}`}>Editar</Link>
-            <button onClick={() => excUsuario(i)}>Excluir</button>
+            <button onClick={() => excUsuario(i)}>Editar</button>
+            <button onClick={() => editUsuario(i)}>Excluir</button>
           </li>
         ))}
       </ListaProdutos>

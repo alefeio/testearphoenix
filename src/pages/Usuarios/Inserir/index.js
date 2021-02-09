@@ -27,7 +27,7 @@ export default function InserirUsuario() {
       <Barra>
         <ul>
           <li>
-            <Link to="/usuarios">Home</Link>
+            <Link to="/">Home</Link>
           </li>
         </ul>
       </Barra>

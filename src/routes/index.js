@@ -8,7 +8,7 @@ import InserirUsuario from '../pages/Usuarios/Inserir';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/usuarios" exact component={Usuarios} />
+      <Route path="/" exact component={Usuarios} />
       <Route path="/inserir" exact component={InserirUsuario} />
     </Switch>
   );
