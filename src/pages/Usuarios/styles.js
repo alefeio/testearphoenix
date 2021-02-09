@@ -54,6 +54,22 @@ export const ListaProdutos = styled.ul`
     padding: 20px;
     overflow: hidden;
 
+    button {
+      margin: 5px 0 0;
+      height: 44px;
+      background: #135c58;
+      font-weight: bold;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.07, '#135c58')};
+      }
+    }
+
     img {
       width: 250px;
       height: 250px;
