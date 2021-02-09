@@ -39,7 +39,7 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-    background: #ddc063;
+    background: #333;
     /* background-image: linear-gradient(-19deg, #d0b45b 0%, #ddc063 100%); */
     /* background-attachment: fixed; */
     /* background-repeat: no-repeat; */

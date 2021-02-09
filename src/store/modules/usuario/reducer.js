@@ -16,7 +16,7 @@ const INITIAL_STATE = {
       email: 'jantonio@gmail.com',
       senha: '123456',
       nascimento: '05/01/1980',
-      tipo: 1,
+      tipo: 2,
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ const INITIAL_STATE = {
       email: 'fernanda@gmail.com',
       senha: '123456',
       nascimento: '20/02/1999',
-      tipo: 1,
+      tipo: 3,
     },
   ],
 };
@@ -34,6 +34,10 @@ export default function usuario(state = INITIAL_STATE, action) {
     switch (action.type) {
       case '@usuario/UPDATE_PERFIL_SUCESSO': {
         draft.perfil.push(action.payload.perfil);
+        break;
+      }
+      case '@usuario/UPDATE_USUARIO_SUCESSO': {
+        draft.perfil[action.payload.id] = action.payload.data;
         break;
       }
       case '@usuario/DELETE_PERFIL_SUCESSO': {

@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 
 import {
   updatePerfilSucesso,
+  updateUsuarioSucesso,
   updatePerfilFalha,
   detelePerfilSucesso,
 } from './actions';
@@ -43,6 +44,41 @@ export function* updatePerfil({ payload }) {
   }
 }
 
+export function* updateUsuario({ payload }) {
+  try {
+    const {
+      id,
+      nome,
+      email,
+      senha,
+      confirmSenha,
+      nascimento,
+      tipo,
+    } = payload.data;
+
+    const posicao = payload.id;
+
+    if (confirmSenha && senha !== confirmSenha)
+      return alert('As senhas não conferem!');
+
+    const perfil = Object.assign({
+      id,
+      nome,
+      email,
+      senha,
+      nascimento,
+      tipo,
+    });
+
+    toast.success('Usuário alterado com sucesso!');
+
+    yield put(updateUsuarioSucesso(posicao, perfil));
+  } catch (error) {
+    toast.error('Erro ao atualizar o perfil. Tente novamente!');
+    yield put(updatePerfilFalha());
+  }
+}
+
 export function* deletePerfil({ payload }) {
   try {
     const data = payload.data;
@@ -62,5 +98,6 @@ export function* deletePerfil({ payload }) {
 
 export default all([
   takeLatest('@usuario/UPDATE_PERFIL_REQUEST', updatePerfil),
+  takeLatest('@usuario/UPDATE_USUARIO_REQUEST', updateUsuario),
   takeLatest('@usuario/DELETE_PERFIL_REQUEST', deletePerfil),
 ]);

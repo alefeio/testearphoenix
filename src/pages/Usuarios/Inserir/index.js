@@ -34,17 +34,23 @@ export default function InserirUsuario() {
       <Titulo>Inserir usuário</Titulo>
       <Prod>
         <Form initialData={perfil} onSubmit={handleSubmit}>
-          <Input name="nome" placeholder="Nome" />
-          <Input name="email" type="email" placeholder="E-mail" />
-          <Input type="password" name="senha" placeholder="Nova senha" />
+          <label>Nome</label>
+          <Input name="nome" placeholder="Seu nome" />
+          <label>Email</label>
+          <Input name="email" type="email" placeholder="Seu e-mail" />
+          <label>Senha</label>
+          <Input type="password" name="senha" placeholder="Digite uma senha" />
+          <label>Confirmação de senha (apenas se quiser alterar)</label>
           <Input
             type="password"
             name="confirmSenha"
-            placeholder="Confirmação da senha"
+            placeholder="Repita a senha"
           />
 
-          <Input name="nascimento" placeholder="Nascimento" />
+          <label>Data de nascimento</label>
+          <Input name="nascimento" placeholder="dd/mm/aaaa" />
 
+          <label>Tipo</label>
           <Select name="tipo" options={options} />
 
           <button type="submit">Inserir usuário</button>
