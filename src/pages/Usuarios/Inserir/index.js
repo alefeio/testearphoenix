@@ -40,7 +40,7 @@ export default function InserirUsuario() {
           <Input name="email" type="email" placeholder="Seu e-mail" />
           <label>Senha</label>
           <Input type="password" name="senha" placeholder="Digite uma senha" />
-          <label>Confirmação de senha (apenas se quiser alterar)</label>
+          <label>Confirmação de senha</label>
           <Input
             type="password"
             name="confirmSenha"
